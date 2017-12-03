@@ -32,8 +32,6 @@ You can use this script to generate the Syntax and run it for yourself, with any
 > 
 > **--spdir**: AWS Redshift Spectrum S3 Bucket
 > 
-> **--spschema**: Name of the AWS Redshift Schema
-> 
 > **--awskey**: IAM Key that has privileges over the S3 Bucket where files will be unloaded
 > 
 > **--awssecret**: IAM Secret that has privileges over the S3 Bucket where files will be unloaded

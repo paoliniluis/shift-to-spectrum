@@ -64,7 +64,7 @@ async function tableSyntaxGen(schema, table) {
     })
 
     let createExternal = `
-        CREATE EXTERNAL TABLE ` + argv.spschema + `.` + schema + table + 
+        CREATE EXTERNAL TABLE e_` + schema + `.` + table + 
         `(` + newTableStructure.slice(0,-1) + `)
         ROW FORMAT DELIMITED
         FIELDS TERMINATED BY '|'
@@ -110,8 +110,7 @@ async function main() {
     --db: database to connect to inside AWS Redshift
     --schema: originl Redshift Schema (the one that will be unloaded)
     --spdir: AWS Redshift Spectrum S3 Bucket
-    --spschema: Name of the AWS Redshift Schema
-    --awskey: IAM Key that has privileges over the S3 Bucket where files will be unloaded
+    --awskey: IAM Key that has privileges over the S3 where files will be unloaded
     --awssecret: IAM Secret that has privileges over the S3 Bucket where files will be unloaded
     OPTIONAL:
     --port: in case you have your cluster in another port
@@ -123,7 +122,6 @@ async function main() {
     if (!argv.db || argv.db == '') throw new Error ('I need a database to point to, otherwise I cannot continue');
     if (!argv.schema || argv.schema == '') throw new Error ('I need a DB schema at least, otherwise I cannot continue');
     if (!argv.spdir || argv.spdir == '') throw new Error ('I need the S3 Bucket where the Spectrum files will be located, otherwise I cannot continue');
-    if (!argv.spschema || argv.spschema == '') throw new Error ('I need the Redshift Spectrum schema, otherwise I cannot continue');
     if (!argv.awskey || argv.awskey == '') throw new Error ('I need the AWS key that will be used for unloading the table, otherwise I cannot continue');
     if (!argv.awssecret || argv.awssecret == '') throw new Error ('I need the AWS Secret that will be used for unloading the table, otherwise I cannot continue');
     if (argv.schema && !argv.table) {
