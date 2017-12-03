@@ -27,6 +27,12 @@ const dataTypeValidator = (dataType) => {
         case 'bigint':
             type = 'BIGINT';
         break;
+        case 'boolean':
+            type = 'BOOLEAN';
+        break;
+        case 'double precision':
+            type = 'FLOAT(' + dataType.numeric_precision + ')';
+        break;
         default:
             type = '';
         break;
@@ -46,7 +52,8 @@ async function tableSyntaxGen(schema, table) {
     let describeTable = `
         SELECT column_name,
             data_type,
-            character_maximum_length
+            character_maximum_length,
+            numeric_precision
             FROM INFORMATION_SCHEMA.COLUMNS
             WHERE table_schema = '` + schema +`'
             AND table_name = '` + table + `';`

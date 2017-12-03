@@ -50,4 +50,4 @@ NOTE: I'm already aware that having PARQUET formatted files in S3 rather than te
 
 TODO:
 1. Include an option to generate the VIEW in the old schema
-2. Add new Data Types in the function dataTypeValidator --> this was planned to only use TIMESTAMP, VARCHAR and BIGINT fields, if there are more fields that you need, please send a Pull Request so we can all improve this tool!
+2. Add new Data Types in the function dataTypeValidator --> this was planned to only use TIMESTAMP, VARCHAR and BIGINT, BOOLEAN and FLOAT fields, if there are more fields that you need, please send a Pull Request so we can all improve this tool!
