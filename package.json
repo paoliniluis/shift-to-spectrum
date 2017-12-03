@@ -1,5 +1,5 @@
 {
-  "name": "spectrumscript",
+  "name": "shift-to-spectrum",
   "version": "1.0.0",
   "description": "An automated script to unload AWS Redshift to Redshift Spectrum",
   "main": "index.js",
