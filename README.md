@@ -17,7 +17,7 @@ You can use this script to generate the Syntax and run it for yourself, with any
 1. `git clone` or download this repo
 2. on the downloaded directory do a `npm i` to install all dependencies
 3. `node index` with the flags below
-4. Once finished (and if you didn't use the execute flag, you will see a syntax.sql file generated with all the commands
+4. Once finished (and if you didn't use the execute flag), you will see a syntax.sql file generated with all the commands
 
 ### FLAGS
 > **--host**: AWS Redshift host to connect to
